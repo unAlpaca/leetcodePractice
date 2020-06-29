@@ -14,7 +14,7 @@ var sortArrayByParity = function(A) {
     //当A[i]不是偶数时，且A[j]不是奇数时，交换后，指针继续行动,否则单个指针运动
 
     let i = 0;
-    let j = A.length;
+    let j = A.length-1;
 
     while(i<j){
         //i是奇数，j是偶数，换
@@ -26,16 +26,16 @@ var sortArrayByParity = function(A) {
 
         //i是奇数，j是奇数，不换，i++
         if(A[i]%2 == 1 && A[j]%2 == 1){
-            i++;
+            j--;
         }
 
         //i是偶数，j是偶数，不换，j--
         if(A[i]%2 == 0 && A[j]%2 == 0){
-            j--;
+            i++;
         }
 
         //i是偶数，j是奇数，不换，i++,j--
-        if(A[i]%2 == 0 && A[j]%2 == 0){
+        if(A[i]%2 == 0 && A[j]%2 == 1){
             i++;
             j--;
         }
