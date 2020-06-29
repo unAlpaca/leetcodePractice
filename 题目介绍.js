@@ -45,4 +45,42 @@ nums2 = [2,5,6],       n = 3
 */
 
     
+// var threeSum = function(nums) {
+//     let res = [];
+//     let hashMap = new Map();
+//     let target = 0;
+//     for(let i = 0; i< nums.length-2;i++){
+//         for(let j = i + 1;j<nums.length-1;j++){
+            
+//             if(hashMap.has(nums[j])){
+//                 res.push(hashMap.get(nums[j]).concat(nums[j]))
+//             }else{
+//                 let key = target - (nums[i] + nums[j]);
+//                 hashMap.set(key,[nums[i],nums[j]])
+//             }
+//         }
+//     }
+//     return res
+// }
 
+// threeSum([-1,0,1,2,-1,-4])
+
+let p1 = new Promise(function(resolve,reject){
+    setTimeout(()=>{
+        resolve()
+    },1000)
+}).then(()=>{
+    console.log(1);
+})
+
+let p2 = new Promise(function(resolve,reject){
+    setTimeout(()=>{
+        resolve()
+    },2000)
+}).then(()=>{
+    console.log(2);
+})
+
+let p3 = Promise.all([p1,p2]).then(()=>{
+    console.log(3);
+})
